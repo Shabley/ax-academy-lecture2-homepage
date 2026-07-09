@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AX Academy 2026 Summer School 2강 슬라이드</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Noto Sans KR',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;background:#100b2f;color:#fff}
+    a{color:inherit;text-decoration:none}
+    .bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px clamp(14px,3vw,30px);background:linear-gradient(135deg,#4a148c,#7c3aed,#0ea5e9);border-bottom:1px solid rgba(255,255,255,.18);box-shadow:0 10px 30px rgba(16,11,47,.24)}
+    .brand{font-weight:950;letter-spacing:-.04em;font-size:15px}
+    .actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .btn,button{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 13px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:#fff;color:#4a148c;font-weight:950;cursor:pointer;font-size:13px}
+    .btn.ghost,button.ghost{background:rgba(255,255,255,.13);color:#fff}
+    .btn:disabled,button:disabled{opacity:.45;cursor:not-allowed}
+    .pageBox{display:flex;align-items:center;gap:7px;padding:0 10px;min-height:36px;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);font-weight:850;font-size:13px}
+    .pageBox input{width:54px;height:27px;border:0;border-radius:10px;text-align:center;font-weight:950;color:#101828}
+    .viewer{min-height:calc(100vh - 59px);padding:18px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 10% 15%,rgba(124,58,237,.28),transparent 30%),radial-gradient(circle at 90% 20%,rgba(14,165,164,.22),transparent 28%),#100b2f}
+    .slideFrame{width:min(100%,1120px);display:flex;align-items:center;justify-content:center}
+    .slideImage{display:block;max-width:100%;max-height:calc(100vh - 104px);height:auto;background:#fff;border-radius:13px;box-shadow:0 30px 90px rgba(0,0,0,.52)}
+    .loading{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(12px);font-weight:950}
+    .hint{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);font-size:12px;color:#e5e7eb;background:rgba(0,0,0,.35);padding:7px 11px;border-radius:999px}
+    @media(max-width:760px){.bar{align-items:flex-start;flex-direction:column}.viewer{min-height:calc(100vh - 112px);padding:8px}.actions{width:100%}.btn,button{min-height:34px;padding:0 10px;font-size:12px}.pageBox{font-size:12px}.slideImage{max-height:calc(100vh - 150px);border-radius:10px}.hint{display:none}}
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="./">AX Academy 2026 Summer School · 2강 AI 도구 Big 3 자료</a>
+    <div class="actions">
+      <a class="btn ghost" href="./">랜딩페이지</a>
+      <button id="prevBtn" class="ghost" type="button">← 이전</button>
+      <div class="pageBox"><input id="pageInput" type="number" min="1" value="1" aria-label="슬라이드 번호"><span>/ <span id="pageCount">46</span></span></div>
+      <button id="nextBtn" type="button">다음 →</button>
+      <a class="btn" href="assets/ax-academy-lecture2.pdf" download>2강 슬라이드 PDF</a>
+      <a class="btn" href="assets/genai-data-pdfs-2026.zip" download>DATA 자료 PDF 다운로드</a>
+    </div>
+  </header>
+  <main class="viewer">
+    <div class="slideFrame"><img id="slideImage" class="slideImage" src="assets/slide-images/slide-01.jpg" alt="AX Academy 2강 슬라이드 1페이지"></div>
+    <div id="loading" class="loading">슬라이드 불러오는 중…</div>
+    <div class="hint">키보드 ← → 로 한 장씩 넘길 수 있습니다</div>
+  </main>
+  <script>
+    const total = 46;
+    let current = 1;
+    const img = document.getElementById('slideImage');
+    const loading = document.getElementById('loading');
+    const input = document.getElementById('pageInput');
+    const prev = document.getElementById('prevBtn');
+    const next = document.getElementById('nextBtn');
+    input.max = total;
+    function src(n){ return `assets/slide-images/slide-${String(n).padStart(2,'0')}.jpg`; }
+    function preload(n){ if(n>=1 && n<=total){ const im = new Image(); im.src = src(n); } }
+    function updateButtons(){ prev.disabled = current <= 1; next.disabled = current >= total; input.value = current; }
+    function go(n){
+      const target = Math.max(1, Math.min(total, Number(n)||1));
+      if(target === current) return;
+      current = target;
+      loading.textContent = '슬라이드 불러오는 중…';
+      loading.style.display = 'block';
+      img.alt = `AX Academy 2강 슬라이드 ${current}페이지`;
+      img.src = src(current);
+      updateButtons();
+      preload(current+1); preload(current-1);
+    }
+    img.addEventListener('load',()=>{ loading.style.display = 'none'; });
+    img.addEventListener('error',()=>{ loading.textContent = '슬라이드를 불러오지 못했습니다. PDF 다운로드를 이용해주세요.'; });
+    prev.addEventListener('click',()=>go(current-1));
+    next.addEventListener('click',()=>go(current+1));
+    input.addEventListener('change',()=>go(input.value));
+    window.addEventListener('keydown',(e)=>{ if(e.key==='ArrowLeft') go(current-1); if(e.key==='ArrowRight') go(current+1); });
+    updateButtons(); preload(2);
+  </script>
+</body>
+</html>

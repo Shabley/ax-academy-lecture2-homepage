@@ -1,0 +1,1 @@
+{"name":"ax-academy-lecture2-homepage","version":"1.0.0","private":true,"description":"AX Academy 2026 Summer School Lecture 2 landing page","scripts":{"dev":"npx serve .","start":"npx serve ."},"devDependencies":{"serve":"^14.2.5"}}
