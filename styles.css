@@ -156,3 +156,33 @@
   color:var(--primary)!important;
 }
 .lecture3-grid-three .featured-card:nth-child(2){min-height:390px}
+
+/* Make Lecture 03 card 02 two PDF buttons clearly visible */
+.lecture3-grid-three .featured-card:nth-child(2) .material-sub-actions{
+  margin-top:18px;
+  gap:10px;
+}
+.lecture3-grid-three .featured-card:nth-child(2) .material-sub-actions .button{
+  display:flex!important;
+  width:100%!important;
+  min-height:42px!important;
+  padding:0 14px!important;
+  border-radius:999px!important;
+  font-size:13px!important;
+  font-weight:950!important;
+  opacity:1!important;
+  visibility:visible!important;
+  text-shadow:none!important;
+}
+.lecture3-grid-three .featured-card:nth-child(2) .material-sub-actions .button.primary{
+  background:linear-gradient(135deg,var(--primary),#0ea5e9)!important;
+  color:#fff!important;
+  border-color:transparent!important;
+  box-shadow:0 12px 24px rgba(14,165,233,.22)!important;
+}
+.lecture3-grid-three .featured-card:nth-child(2) .material-sub-actions .button.secondary.dark{
+  background:linear-gradient(135deg,#12346b,#0ea5a4)!important;
+  color:#fff!important;
+  border-color:transparent!important;
+  box-shadow:0 12px 24px rgba(18,52,107,.18)!important;
+}
