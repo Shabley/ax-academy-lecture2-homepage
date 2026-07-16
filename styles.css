@@ -140,3 +140,19 @@
 .lecture3-grid-three{grid-template-columns:repeat(3,minmax(0,1fr))}
 .material-sub-actions{display:flex;flex-direction:column;gap:8px;width:100%;margin-top:auto}.material-sub-actions .button{width:100%;min-height:38px;font-size:13px}.button.secondary.dark{background:#f8fafc;color:var(--blue);border-color:#dbe4f0;box-shadow:none}.button.secondary.dark:hover{background:#eef7ff;color:var(--primary)}
 @media(max-width:980px){.lecture3-grid-three{grid-template-columns:1fr}}
+
+/* Fix Lecture 03 card 02 sub-download buttons visibility */
+.material-sub-actions a.button.secondary.dark{
+  display:flex!important;
+  background:#f8fafc!important;
+  color:#12346b!important;
+  border:1px solid #dbe4f0!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+  opacity:1!important;
+}
+.material-sub-actions a.button.secondary.dark:hover{
+  background:#eef7ff!important;
+  color:var(--primary)!important;
+}
+.lecture3-grid-three .featured-card:nth-child(2){min-height:390px}
