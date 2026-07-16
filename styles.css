@@ -264,3 +264,10 @@
 .overview-grid .icon{width:auto;min-width:58px;padding:0 12px;font-size:13px}
 .lecture3-overview-card{border-color:#bfdbfe;background:linear-gradient(180deg,#f8fbff,#ffffff)}
 .lecture3-overview-card .icon{background:linear-gradient(135deg,#0ea5a4,#7c3aed);color:#fff}
+
+/* Lecture 03 prompt library */
+.lecture3-prompt-library{background:linear-gradient(180deg,#ffffff,#f7f7fb)}
+.lecture3-prompt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.prompt-card .prompt-desc{margin:-2px 0 2px;color:var(--muted);font-size:13px;font-weight:700;line-height:1.55}
+.lecture3-prompt-grid .prompt-card pre{min-height:180px;max-height:260px}
+@media(max-width:900px){.lecture3-prompt-grid{grid-template-columns:1fr}}
