@@ -186,3 +186,41 @@
   border-color:transparent!important;
   box-shadow:0 12px 24px rgba(18,52,107,.18)!important;
 }
+
+/* Final visible two-PDF buttons inside Lecture 03 card 02 */
+.lecture3-grid-three .featured-card:nth-child(2){
+  min-height:430px;
+}
+.lecture3-grid-three .featured-card:nth-child(2) .two-pdf-buttons{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:12px!important;
+  width:100%!important;
+  margin-top:18px!important;
+}
+.lecture3-grid-three .featured-card:nth-child(2) .two-pdf-buttons .pdf-button{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  min-height:46px!important;
+  padding:0 16px!important;
+  border-radius:999px!important;
+  color:#fff!important;
+  font-size:13px!important;
+  font-weight:950!important;
+  line-height:1.25!important;
+  border:0!important;
+  opacity:1!important;
+  visibility:visible!important;
+  box-shadow:0 14px 28px rgba(18,52,107,.20)!important;
+  text-shadow:none!important;
+  white-space:normal!important;
+  text-align:center!important;
+}
+.lecture3-grid-three .featured-card:nth-child(2) .two-pdf-buttons .pdf-button.vibe{
+  background:linear-gradient(135deg,#4a148c,#0ea5e9)!important;
+}
+.lecture3-grid-three .featured-card:nth-child(2) .two-pdf-buttons .pdf-button.claude{
+  background:linear-gradient(135deg,#12346b,#0ea5a4)!important;
+}
