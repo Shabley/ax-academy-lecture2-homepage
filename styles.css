@@ -224,3 +224,9 @@
 .lecture3-grid-three .featured-card:nth-child(2) .two-pdf-buttons .pdf-button.claude{
   background:linear-gradient(135deg,#12346b,#0ea5a4)!important;
 }
+
+/* Lecture 03 4-card layout */
+.lecture3-grid-four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.lecture3-grid-four .featured-card:nth-child(2){min-height:430px}
+@media(max-width:1120px){.lecture3-grid-four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.lecture3-grid-four{grid-template-columns:1fr}}
