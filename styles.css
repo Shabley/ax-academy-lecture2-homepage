@@ -225,20 +225,23 @@
   background:linear-gradient(135deg,#12346b,#0ea5a4)!important;
 }
 
-/* Lecture 03 5-card layout */
+/* Lecture 03 material card layouts */
 .lecture3-grid-four{grid-template-columns:repeat(4,minmax(0,1fr))}
 .lecture3-grid-five{grid-template-columns:repeat(6,minmax(0,1fr))}
 .lecture3-grid-five .featured-card{grid-column:span 2}
 .lecture3-grid-five .featured-card:nth-child(4){grid-column:2 / span 2}
 .lecture3-grid-five .featured-card:nth-child(5){grid-column:4 / span 2}
+.lecture3-grid-six{grid-template-columns:repeat(3,minmax(0,1fr))}
 .lecture3-grid-four .featured-card:nth-child(2),
-.lecture3-grid-five .featured-card:nth-child(2){min-height:430px}
-@media(max-width:1120px){.lecture3-grid-four{grid-template-columns:repeat(2,minmax(0,1fr))}.lecture3-grid-five{grid-template-columns:repeat(2,minmax(0,1fr))}.lecture3-grid-five .featured-card,.lecture3-grid-five .featured-card:nth-child(4),.lecture3-grid-five .featured-card:nth-child(5){grid-column:auto}}
-@media(max-width:720px){.lecture3-grid-four,.lecture3-grid-five{grid-template-columns:1fr}.lecture3-grid-five .featured-card,.lecture3-grid-five .featured-card:nth-child(4),.lecture3-grid-five .featured-card:nth-child(5){grid-column:auto}}
+.lecture3-grid-five .featured-card:nth-child(2),
+.lecture3-grid-six .featured-card:nth-child(2){min-height:430px}
+@media(max-width:1120px){.lecture3-grid-four,.lecture3-grid-six{grid-template-columns:repeat(2,minmax(0,1fr))}.lecture3-grid-five{grid-template-columns:repeat(2,minmax(0,1fr))}.lecture3-grid-five .featured-card,.lecture3-grid-five .featured-card:nth-child(4),.lecture3-grid-five .featured-card:nth-child(5){grid-column:auto}}
+@media(max-width:720px){.lecture3-grid-four,.lecture3-grid-five,.lecture3-grid-six{grid-template-columns:1fr}.lecture3-grid-five .featured-card,.lecture3-grid-five .featured-card:nth-child(4),.lecture3-grid-five .featured-card:nth-child(5){grid-column:auto}}
 
 /* Lecture 03 card 04 male/female suit zip buttons */
 .lecture3-grid-four .featured-card:nth-child(4) .suit-zip-buttons,
-.lecture3-grid-five .featured-card:nth-child(4) .suit-zip-buttons{
+.lecture3-grid-five .featured-card:nth-child(4) .suit-zip-buttons,
+.lecture3-grid-six .featured-card:nth-child(4) .suit-zip-buttons{
   display:flex!important;
   flex-direction:column!important;
   gap:12px!important;
@@ -246,7 +249,8 @@
   margin-top:18px!important;
 }
 .lecture3-grid-four .featured-card:nth-child(4) .suit-zip-buttons .pdf-button,
-.lecture3-grid-five .featured-card:nth-child(4) .suit-zip-buttons .pdf-button{
+.lecture3-grid-five .featured-card:nth-child(4) .suit-zip-buttons .pdf-button,
+.lecture3-grid-six .featured-card:nth-child(4) .suit-zip-buttons .pdf-button{
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
@@ -265,9 +269,11 @@
   text-align:center!important;
 }
 .lecture3-grid-four .featured-card:nth-child(4) .suit-zip-buttons .pdf-button.vibe,
-.lecture3-grid-five .featured-card:nth-child(4) .suit-zip-buttons .pdf-button.vibe{background:linear-gradient(135deg,#4a148c,#0ea5e9)!important}
+.lecture3-grid-five .featured-card:nth-child(4) .suit-zip-buttons .pdf-button.vibe,
+.lecture3-grid-six .featured-card:nth-child(4) .suit-zip-buttons .pdf-button.vibe{background:linear-gradient(135deg,#4a148c,#0ea5e9)!important}
 .lecture3-grid-four .featured-card:nth-child(4) .suit-zip-buttons .pdf-button.claude,
-.lecture3-grid-five .featured-card:nth-child(4) .suit-zip-buttons .pdf-button.claude{background:linear-gradient(135deg,#12346b,#0ea5a4)!important}
+.lecture3-grid-five .featured-card:nth-child(4) .suit-zip-buttons .pdf-button.claude,
+.lecture3-grid-six .featured-card:nth-child(4) .suit-zip-buttons .pdf-button.claude{background:linear-gradient(135deg,#12346b,#0ea5a4)!important}
 
 /* Program overview: distinguish Lecture 02 and Lecture 03 cards */
 .overview-grid .icon{width:auto;min-width:58px;padding:0 12px;font-size:13px}
