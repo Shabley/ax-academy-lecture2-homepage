@@ -227,12 +227,14 @@
 
 /* Lecture 03 5-card layout */
 .lecture3-grid-four{grid-template-columns:repeat(4,minmax(0,1fr))}
-.lecture3-grid-five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.lecture3-grid-five{grid-template-columns:repeat(6,minmax(0,1fr))}
+.lecture3-grid-five .featured-card{grid-column:span 2}
+.lecture3-grid-five .featured-card:nth-child(4){grid-column:2 / span 2}
+.lecture3-grid-five .featured-card:nth-child(5){grid-column:4 / span 2}
 .lecture3-grid-four .featured-card:nth-child(2),
 .lecture3-grid-five .featured-card:nth-child(2){min-height:430px}
-@media(max-width:1280px){.lecture3-grid-five{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:1120px){.lecture3-grid-four,.lecture3-grid-five{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:720px){.lecture3-grid-four,.lecture3-grid-five{grid-template-columns:1fr}}
+@media(max-width:1120px){.lecture3-grid-four{grid-template-columns:repeat(2,minmax(0,1fr))}.lecture3-grid-five{grid-template-columns:repeat(2,minmax(0,1fr))}.lecture3-grid-five .featured-card,.lecture3-grid-five .featured-card:nth-child(4),.lecture3-grid-five .featured-card:nth-child(5){grid-column:auto}}
+@media(max-width:720px){.lecture3-grid-four,.lecture3-grid-five{grid-template-columns:1fr}.lecture3-grid-five .featured-card,.lecture3-grid-five .featured-card:nth-child(4),.lecture3-grid-five .featured-card:nth-child(5){grid-column:auto}}
 
 /* Lecture 03 card 04 male/female suit zip buttons */
 .lecture3-grid-four .featured-card:nth-child(4) .suit-zip-buttons,
